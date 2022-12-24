@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="nav">
+        <p>Header</p>
+        <div class="nav-bar">
+            <ul>
+                <a href="singup.html">
+                    <li>SignUp</li>
+                </a>
+                <a href="signin.html">
+                    <li>Profile</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="container-2">
+        <div class="para">
+            <p id="profile">Profile</p>
+            <div id="result" class="name">Full Name: <span id="user-name"></span></div>
+            <div id="resultmail" class="email">Email: <span id="user-email"></span></div>
+            <div id="resultpass" class="password">Password: <span id="user-pass"></span></div>
+            <button id="clear" class="logbtn" type="reset">Logout</button>
+        </div>
+
+    </div>
+    <script>
+        const username = localStorage.getItem('user-name')
+        const useremail = localStorage.getItem('user-email')
+        const userpass = localStorage.getItem('user-pass')
+
+
+        document.getElementById('user-name').textContent = username
+        document.getElementById('user-email').textContent = useremail
+        document.getElementById('user-pass').textContent = userpass
+
+
+        document.getElementById("clear").addEventListener("click", () => {
+            document.getElementById('user-name').style.display = "none";
+            document.getElementById('user-email').style.display = "none";
+            document.getElementById('user-pass').style.display = "none";
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication-login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="nav">
+        <p>Header</p>
+        <div class="nav-bar">
+            <ul>
+                <a href="singup.html">
+                    <li>SignUp</li>
+                </a>
+                <a href="signin.html">
+                    <li>Profile</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <h1>SignUp</h1>
+        <form class="login-form" name="my-form" id="form" >
+            <input type="text" name="uname" id="username" placeholder="Full Name" required>
+            <input type="email" name="email" id="useremail" placeholder="Email" required>
+            <input type="password" name="pass" id="userpass" placeholder="Password" required>
+            <input type="password" name="cpass" id="usercpass" placeholder="Confirm Password"required>
+            
+            
+            <button id="btn" type="submit">Signup</button>
+        </form>
+    </div>
+    
+    
+
+    <script>
+       
+            const form = document.getElementById('form')
+            const username = document.getElementById('username')
+            const useremail = document.getElementById('useremail')
+            const userpass = document.getElementById('userpass')
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const usernameValue = username.value
+                const useremailValue = useremail.value
+                const userpassValue = userpass.value
+
+                localStorage.setItem('user-name', usernameValue)
+                localStorage.setItem('user-email', useremailValue)
+                localStorage.setItem('user-pass', userpassValue)
+
+
+                window.location.href = 'signin.html'
+            })
+
+        
+    </script>
+</body>
+
+</html>
